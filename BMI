@@ -1,0 +1,72 @@
+#Paris Bridges 
+# This program is to tell you whether you weight is healthy or not
+
+
+name = input("Name:")
+#the info user puts
+age = input("Age:")
+height = input("Height in Inches:")
+weight = input("Weight in Pounds:")
+print("Is Your Name, Age, Height, and Weight Correct?")
+
+# Checking user info
+input("Yes or No:")
+if 'Yes':
+#1st outer if
+    print('Your BMI is:')
+    BMI= int(weight) * 703 / int(height) ** 2
+# BMI equation
+    print(BMI)
+    if BMI < 18.5:
+#nested if
+        print('UnderWeight')
+    elif BMI > 25:
+#First nested elif
+        print('Overweight')
+    elif 18.5 <= BMI <= 25:
+# second nested elif
+        print('Optimal Weight')
+else:
+#2nd outer if
+    print('Please, Start Over.')
+
+
+FemaleBMR = 655 + (4.35 * int(weight)) + (4.7 * int(height)) - (4.7 * int(age))
+#BMR equation for females
+MaleBMR = 66 + (6.23 * int(weight)) + (12.7 * int(height)) + (6.8 * int(age))
+#BMR equatioon for males
+gender = input("are you Female (F) or"" Male (M):")
+
+
+print('is your gender correct?')
+# Checking user info
+input("Yes or No:")
+
+
+print("Your BMR Is:")
+if 'Yes':
+#Outer if statement pass
+    if gender == '(F)'or 'Female':
+#First Nested if statment
+        print(FemaleBMR)
+        print('The Average BMR For Women is 1400 And For Men is 1800')
+#Info Notice
+        if FemaleBMR < 1400:
+#Second Nested if statement
+            print('Its Recommended You Increase Your Caloric Intake')
+        elif FemaleBMR > 1400:
+#First Nested elif
+            print('Its Recommended You Decrease Your Caloric Intake')
+    else :
+#First Nested else statement
+
+        print(MaleBMR)
+        if MaleBMR < 1800:
+#Third Nested if
+            print('Its Recommended You Increase Your Caloric Intake')
+        elif MaleBMR > 1800:
+#Second Nested elif
+             print('Its Recommended You Decrease Your Caloric Intake')
+else:
+#2nd outer if
+print('Please, Start Over.')
